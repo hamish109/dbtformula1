@@ -3,7 +3,7 @@
 ) }}
 
 WITH circuits AS (
-    SELECT * FROM {{ ref('stg_circuits') }}
+    SELECT * FROM {{ ref('stg_formula1__circuits') }}
 )
 
 SELECT

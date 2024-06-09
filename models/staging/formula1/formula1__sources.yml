@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: formula1
     description: formula 1 datasets with normalized tables 
-    database: formula1 
+    database: formula1_dev  #macro to determine database based on target at runtime.
     schema: raw
     tables:
 

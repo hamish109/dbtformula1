@@ -4,8 +4,8 @@ with
 
     renamed as (
         select
-            race_id as race_id,
-            driver_id as driver_id,
+            raceid as race_id,
+            driverid as driver_id,
             lap,
             "POSITION" as driver_position,
             "TIME" as lap_time_formatted,

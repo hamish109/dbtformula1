@@ -12,7 +12,7 @@ WITH qualifying AS (
         q1_time                                     AS q1_time,
         q2_time                                     AS q2_time,
         q3_time                                     AS q3_time
-    FROM {{ ref('stg_qualifying') }}
+    FROM {{ ref('stg_formula1__qualifying') }}
 )
 
 SELECT * FROM qualifying

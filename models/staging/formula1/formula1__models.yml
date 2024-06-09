@@ -14,7 +14,7 @@ exposures:
       email: ian.cooper@dbtlabs.com
 
 models:
-    - name: stg_circuits
+    - name: stg_formula1__circuits
       description: '{{ doc("stg_circuit_desc") }}'
       columns:
           - name: circuit_id
@@ -39,7 +39,7 @@ models:
           - name: circuit_url
             description: '{{ doc("circuit_url_def") }}'
 
-    - name: stg_constructor_results
+    - name: stg_formula1__constructor_results
       description: "Fact data related to constructor (ie brand) results. This is at a race level but race info isn't in this model, just the race_id."
       columns:
           - name: constructor_results_id
@@ -56,7 +56,7 @@ models:
           - name: status
             description: '{{ doc("constructor_status_def") }}'
 
-    - name: stg_constructor_standings
+    - name: stg_formula1__constructor_standings
       description: "Fact data related to constructor (ie brand) results. This is at a race level but race info isn't in this model, just the race_id."
       columns:
           - name: constructor_standings_id
@@ -77,7 +77,7 @@ models:
           - name: wins
             description: '{{ doc("constructor_wins_def") }}'
 
-    - name: stg_constructors
+    - name: stg_formula1__constructors
       description: '{{ doc("stg_constructors_desc") }}'
       columns:
           - name: constructor_id
@@ -94,7 +94,7 @@ models:
           - name: constructor_url
             description: '{{ doc("constructor_url_def") }}'
 
-    - name: stg_driver_standings
+    - name: stg_formula1__driver_standings
       description: "Fact data for driver standings by race."
       columns:
           - name: driver_standings_id
@@ -117,7 +117,7 @@ models:
           - name: driver_wins
             description: '{{ doc("driver_wins_def") }}'
 
-    - name: stg_drivers
+    - name: stg_formula1__drivers
       description: "Dimensional model stage for driver attributes."
       columns:
           - name: driver_id
@@ -140,7 +140,7 @@ models:
           - name: driver_url
             description: '{{ doc("driver_url_def") }}'
 
-    - name: stg_lap_times
+    - name: stg_formula1__lap_times
       description: "Fact data around every lap."
       columns:
           - name: lap_times_id
@@ -163,7 +163,7 @@ models:
           - name: lap_time_milliseconds
             description: '{{ doc("lap_time_milliseconds_def") }}'
 
-    - name: stg_pit_stops
+    - name: stg_formula1__pit_stops
       description: "Fact data around pitstop times."
       columns:
           - name: pitstop_id
@@ -188,7 +188,7 @@ models:
           - name: pit_stop_milliseconds
             description: '{{ doc("pit_stop_milliseconds_def") }}'    
 
-    - name: stg_qualifying
+    - name: stg_formula1__qualifying
       description: "Fact data around qualifying times."
       columns:
           - name: qualifying_id
@@ -213,7 +213,7 @@ models:
           - name: q3_time
             description: '{{ doc("q3_time_def") }}'
 
-    - name: stg_races
+    - name: stg_formula1__races
       description: "Fact data around qualifying times."
       columns:
           - name: race_id
@@ -256,7 +256,7 @@ models:
           - name: sprint_time
             description: '{{ doc("sprint_time_def") }}'
 
-    - name: stg_results
+    - name: stg_formula1__results
       description: "Fact data around qualifying times."
       columns:
           - name: result_id
@@ -300,7 +300,7 @@ models:
             description: '{{ doc("status_id_def") }}'
 
 
-    - name: stg_seasons
+    - name: stg_formula1__seasons
       description: "Season information"
       columns:
           - name: season_year
@@ -311,7 +311,7 @@ models:
           - name: season_url
             description: "The Wiki URL for F1 Season"
 
-    - name: stg_sprint_results
+    - name: stg_formula1__sprint_results
       description: "Fact data around qualifying times."
       columns:
           - name: result_id
@@ -351,7 +351,7 @@ models:
             description: '{{ doc("status_id_def") }}'
 
                 
-    - name: stg_status
+    - name: stg_formula1__status
       description: "Status codes mapping."
       columns:
           - name: status_id

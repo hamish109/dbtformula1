@@ -3,3 +3,5 @@ version: 2
 macros:
     - name: convert_laptime
       description: "This macro converts formatted time string into actual time variable type."
+    - name: convert_speed_kph
+      description: "This macro converts speed from miles per hour to kilometers per hour"

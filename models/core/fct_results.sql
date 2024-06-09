@@ -25,7 +25,7 @@ WITH results AS (
         fastest_lap_time    AS fastest_lap_time,
         fastest_lap_speed   AS fastest_lap_speed,
         status_id           AS status_id
-    FROM {{ ref('stg_results') }}
+    FROM {{ ref('stg_formula1__results') }}
 )
 
 SELECT * FROM results

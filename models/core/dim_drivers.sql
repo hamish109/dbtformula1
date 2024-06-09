@@ -9,7 +9,7 @@ WITH drivers AS (
         date_of_birth           AS date_of_birth,
         driver_nationality      AS driver_nationality
         --driver_url        AS driver_url
-    FROM {{ ref('stg_drivers') }}
+    FROM {{ ref('stg_formula1__drivers') }}
 )
 
 SELECT * FROM drivers
