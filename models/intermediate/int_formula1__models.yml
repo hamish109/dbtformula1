@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: int_results_convert_speed
+    description: ""
+    columns:
+      - name: result_id
+        data_type: number
+        description: ""
+
+      - name: race_id
+        data_type: number
+        description: ""
+
+      - name: driver_id
+        data_type: number
+        description: ""
+
+      - name: constructor_id
+        data_type: number
+        description: ""
+
+      - name: driver_number
+        data_type: number
+        description: ""
+
+      - name: grid
+        data_type: number
+        description: ""
+
+      - name: driver_position
+        data_type: number
+        description: ""
+
+      - name: position_text
+        data_type: varchar
+        description: ""
+
+      - name: position_order
+        data_type: number
+        description: ""
+
+      - name: points
+        data_type: number
+        description: ""
+
+      - name: laps
+        data_type: number
+        description: ""
+
+      - name: race_time
+        data_type: varchar
+        description: ""
+
+      - name: milliseconds
+        data_type: number
+        description: ""
+
+      - name: fastest_lap
+        data_type: number
+        description: ""
+
+      - name: driver_rank
+        data_type: number
+        description: ""
+
+      - name: fastest_lap_time
+        data_type: time
+        description: ""
+
+      - name: fastest_lap_speed
+        data_type: varchar
+        description: ""
+
+      - name: status_id
+        data_type: number
+        description: ""
