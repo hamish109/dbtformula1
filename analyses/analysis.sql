@@ -1,3 +1,3 @@
-{{ codegen.generate_model_yaml(
-    model_names=['int_results_convert_speed']
-) }}
+select * 
+from {{ ref('dim_drivers_snapshot') }}
+where driver_number = 40

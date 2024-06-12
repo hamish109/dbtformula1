@@ -12,7 +12,7 @@ races as (
 
 drivers as (
 
-  select * from {{ ref('dim_drivers') }}
+  select * from {{ ref('dim_drivers_snapshot') }}
 
 ), 
 
