@@ -1,5 +1,5 @@
 name: 'dbtformula1'
-version: '1.8.1'
+version: '1.8.2'
 require-dbt-version: '>=1.3.0'
 config-version: 2
 
