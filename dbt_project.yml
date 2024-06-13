@@ -54,15 +54,15 @@ models:
       +docs:
         node_color: "#800080"
 
-    ml:
-      +materialized: table
-      +schema: ml
-      prep_encoding_splitting:
-        +docs:
-          node_color: "Indigo"
-      training_and_prediction:
-        +docs:
-          node_color: "Black"
+#    ml:
+#      +materialized: table
+#      +schema: ml
+#      prep_encoding_splitting:
+#        +docs:
+#          node_color: "Indigo"
+#      training_and_prediction:
+#        +docs:
+#          node_color: "Black"
 
 snapshots:
   dbtformula1:
