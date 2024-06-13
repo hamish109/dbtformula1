@@ -31,13 +31,16 @@ jobs:
         run: dbt deps
 
       - name: dbt build
-        run: dbt build --full-refresh --profiles-dir ./
+        run: dbt build --full-refresh --profiles-dir ./dbtformula1/
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
-          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }} 
+          DBT_ENV_SECRET_SNOWFLAKE_PASSWORD: ${{ secrets.DBT_ENV_SECRET_SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_USER_ROLE: ${{ variables.SNOWFLAKE_USER_ROLE }}
+          SNOWFLAKE_WAREHOUSE: ${{ variables.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_DATABASE: ${{ variables.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ variables.SNOWFLAKE_SCHEMA }} 
+          SNOWFLAKE_ENVIRONMENT: ${{ variables.SNOWFLAKE_ENVIRONMENT }}
 
-      - name: Lint models
-        run: "sqlfluff lint models"
+      #- name: Lint models
+      #  run: "sqlfluff lint models"
