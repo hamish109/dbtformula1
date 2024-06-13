@@ -1,0 +1,33 @@
+dbtformula1:
+  outputs:
+    dev:
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      password: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_USER_ROLE') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
+      threads: 200
+      type: snowflake
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+    ci:
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      password: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_USER_ROLE') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
+      threads: 200
+      type: snowflake
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"      
+    prod:
+      account: tqefxvm-km19232
+      database: formula1
+      password: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      schema: internal
+      threads: 200
+      type: snowflake
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      warehouse: COMPUTE_WH
+  target: "{{ env_var('SNOWFLAKE_ENVIRONMENT') }}"
