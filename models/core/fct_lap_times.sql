@@ -8,7 +8,7 @@ WITH lap_times AS (
         lap_time_formatted                                                              AS lap_time_formatted,
         official_laptime                                                                AS official_laptime,
         lap_time_milliseconds                                                           AS lap_time_milliseconds
-    FROM {{ ref('stg_lap_times') }}
+    FROM {{ ref('stg_formula1__lap_times') }}
 )
 
 SELECT * FROM lap_times

@@ -1,5 +1,5 @@
 WITH constructors AS (
-    SELECT * FROM {{ ref('stg_constructors') }}
+    SELECT * FROM {{ ref('stg_formula1__constructors') }}
 )
 
 SELECT

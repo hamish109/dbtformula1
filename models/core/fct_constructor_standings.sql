@@ -7,7 +7,7 @@ WITH constructor_standings AS (
         constructor_position        AS constructor_position,
         position_text               AS position_text,
         wins                        AS wins
-    FROM {{ ref('stg_constructor_standings') }}
+    FROM {{ ref('stg_formula1__constructor_standings') }}
 )
 
 SELECT * FROM constructor_standings

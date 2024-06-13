@@ -18,7 +18,7 @@ WITH races AS (
         quali_time      AS quali_time,
         sprint_date     AS sprint_date,
         sprint_time     AS sprint_time
-    FROM {{ ref('stg_races') }}
+    FROM {{ ref('stg_formula1__races') }}
 )
 
 SELECT * FROM races

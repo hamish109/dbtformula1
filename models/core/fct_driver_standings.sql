@@ -7,7 +7,7 @@ WITH driver_standings AS (
         driver_position         AS driver_position,
         position_text           AS position_text,
         driver_wins             AS driver_wins
-    FROM {{ ref('stg_driver_standings') }}
+    FROM {{ ref('stg_formula1__driver_standings') }}
 )
 
 SELECT * FROM driver_standings

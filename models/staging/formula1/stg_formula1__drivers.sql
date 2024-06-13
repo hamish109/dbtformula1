@@ -4,8 +4,8 @@ with
 
     renamed as (
         select
-            driver_id as driver_id,
-            driver_ref as driver_ref,
+            driverid as driver_id,
+            driverref as driver_ref,
             number as driver_number,
             code as driver_code,
             forename,

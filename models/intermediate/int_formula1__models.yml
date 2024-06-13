@@ -1,0 +1,113 @@
+version: 2
+
+models:
+  - name: int_results_convert_speed
+    description: ""
+    columns:
+      - name: result_id
+        data_type: number
+        description: ""
+
+      - name: race_id
+        data_type: number
+        description: ""
+
+      - name: driver_id
+        data_type: number
+        description: ""
+
+      - name: constructor_id
+        data_type: number
+        description: ""
+
+      - name: driver_number
+        data_type: number
+        description: ""
+
+      - name: grid
+        data_type: number
+        description: ""
+
+      - name: driver_position
+        data_type: number
+        description: ""
+        data_tests:
+          - relationships:
+              to: ref('stg_formula1__driver_standings')
+              field: driver_position
+
+      - name: position_text
+        data_type: varchar
+        description: ""
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 33
+              inclusive: true
+              config:
+                where: "case when position_text RLIKE '^[0-9]+$' then 1 else 0 end = 1"
+          - accepted_values:
+              name: position_text_accepted_values_text_test
+              values: ['D','E','F','N','R','W']
+              config:
+                where: "case when position_text RLIKE '^[A-Z]+$' then 1 else 0 end = 1"
+
+      - name: position_order
+        data_type: number
+        description: ""
+
+      - name: points
+        data_type: number
+        description: ""
+
+      - name: laps
+        data_type: number
+        description: ""
+
+      - name: race_time
+        data_type: varchar
+        description: ""
+
+      - name: milliseconds
+        data_type: number
+        description: ""
+
+      - name: fastest_lap
+        data_type: number
+        description: ""
+
+      - name: driver_rank
+        data_type: number
+        description: ""
+
+      - name: fastest_lap_time
+        data_type: time
+        description: ""
+
+      - name: fastest_lap_speed
+        data_type: varchar
+        description: ""
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 300
+              inclusive: true
+              config:
+                where: "fastest_lap_speed is not null"
+
+      - name: status_id
+        data_type: number
+        description: ""
+
+      - name: fastest_lap_speed_kph
+        data_type: number
+        description: ""
+        data_tests:
+          - positive_value
+
+
+
+
+
+
+        
