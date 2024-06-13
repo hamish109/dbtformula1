@@ -36,11 +36,11 @@ jobs:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           DBT_ENV_SECRET_SNOWFLAKE_PASSWORD: ${{ secrets.DBT_ENV_SECRET_SNOWFLAKE_PASSWORD }}
-          SNOWFLAKE_USER_ROLE: ${{ variables.SNOWFLAKE_USER_ROLE }}
-          SNOWFLAKE_WAREHOUSE: ${{ variables.SNOWFLAKE_WAREHOUSE }}
-          SNOWFLAKE_DATABASE: ${{ variables.SNOWFLAKE_DATABASE }}
-          SNOWFLAKE_SCHEMA: ${{ variables.SNOWFLAKE_SCHEMA }} 
-          SNOWFLAKE_ENVIRONMENT: ${{ variables.SNOWFLAKE_ENVIRONMENT }}
+          SNOWFLAKE_USER_ROLE: ${{ vars.SNOWFLAKE_USER_ROLE }}
+          SNOWFLAKE_WAREHOUSE: ${{ vars.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_DATABASE: ${{ vars.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ vars.SNOWFLAKE_SCHEMA }} 
+          SNOWFLAKE_ENVIRONMENT: ${{ vars.SNOWFLAKE_ENVIRONMENT }}
 
       #- name: Lint models
       #  run: "sqlfluff lint models"
