@@ -1,6 +1,6 @@
 with results as (
 
-    select * 
+    select *  --  dbt_utils.star(ref('stg_formula1__results')) - doesn't work with unit test...
     from {{ ref('stg_formula1__results') }}
 
 ),

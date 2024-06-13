@@ -23,6 +23,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 vars:
   mph_to_kph_factor: 1.60934  
+  snapshot_view_schema: PUBLIC
 
 models:
   #+transient: false

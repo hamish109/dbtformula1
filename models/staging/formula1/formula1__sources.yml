@@ -3,19 +3,19 @@ version: 2
 sources:
   - name: formula1
     description: formula 1 datasets with normalized tables 
-    database: formula1_dev  #macro to determine database based on target at runtime.
+    database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
     schema: raw
     tables:
 
       - name: circuits
         description: One record per circuit, which is the specific race course. 
         columns:
-          - name: circuit_id
+          - name: circuitid
             tests:
             - unique
             - not_null
             description: Unique identifier for the circuit
-          - name: circuit_ref
+          - name: circuitref
             description: Unique circuit reference
           - name: name
             description: Name of the circuit
@@ -36,11 +36,11 @@ sources:
       - name: constructor_results
         description: This table contains race results for constructors.
         columns:
-          - name: constructor_results_id
+          - name: constructorresultsid
             description: Unique identifier for the constructor race result
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: constructor_id
+          - name: constructorid
             description: Unique identifier for the constructor
           - name: points
             description: Points scored by the constructor in the race
@@ -51,11 +51,11 @@ sources:
       - name: constructor_standings
         description: This table contains historical Formula 1 constructor standings.
         columns:
-          - name: constructor_standings_id
+          - name: constructorstandingsid
             description: Unique identifier for the constructor standings entry
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: constructor_id
+          - name: constructorid
             description: Unique identifier for the constructor
           - name: points
             description: Accumulated points for the constructor at this point in the season
@@ -68,12 +68,12 @@ sources:
       - name: constructors 
         description: One record per constructor. Constructors are the teams that build their formula 1 cars. 
         columns:
-          - name: constructor_id
+          - name: constructorid
             description: Unique identifier for the constructor
             tests:
             - unique
             - not_null
-          - name: constructor_ref
+          - name: constructorref
             description: Unique constructor reference
           - name: name
             description: Constructor name
@@ -85,11 +85,11 @@ sources:
       - name: driver_standings
         description: This table contains historical Formula 1 driver standings.
         columns:
-          - name: driver_standings_id
+          - name: driverstandingsid
             description: Unique identifier for the driver standings entry
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: driver_id
+          - name: driverid
             description: Unique identifier for the driver
           - name: points
             description: Accumulated points for the driver at this point in the season
@@ -102,12 +102,12 @@ sources:
       - name: drivers
         description: One record per driver. This table gives details about the driver. 
         columns:
-          - name: driver_id
+          - name: driverid
             tests:
             - unique
             - not_null
             description: Unique identifier for the driver
-          - name: driver_ref
+          - name: driverref
             description: Unique driver reference
           - name: number
             description: Driver number
@@ -127,9 +127,9 @@ sources:
       - name: lap_times
         description: One row per lap in each race. Lap times started being recorded in this dataset in 1984 and joined through driver_id.
         columns:
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: driver_id
+          - name: driverid
             description: Unique identifier for the driver
           - name: lap
             description: Lap number
@@ -143,9 +143,9 @@ sources:
       - name: pit_stops 
         description: One row per pit stop. Pit stops do not have their own id column, the combination of the race_id and driver_id identify the pit stop.
         columns:
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: driver_id
+          - name: driverid
             description: Unique identifier for the driver
           - name: stop
             description: Sequential number of the pit stop for the driver in the race
@@ -165,13 +165,13 @@ sources:
       - name: qualifying
         description: This table contains qualifying session results for each driver.
         columns:
-          - name: qualifying_id
+          - name: qualifyid
             description: Unique identifier for the qualifying result
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: driver_id
+          - name: driverid
             description: Unique identifier for the driver
-          - name: constructor_id
+          - name: constructorid
             description: Unique identifier for the constructor
           - name: number
             description: Car number
@@ -196,7 +196,7 @@ sources:
             description: Year the race took place
           - name: round
             description: Round number in the championship
-          - name: circuit_id
+          - name: circuitid
             description: Unique identifier for the circuit
           - name: name
             description: Name of the race
@@ -210,16 +210,16 @@ sources:
       - name: results
         description: One row per result. The main table that we join out for grid and position variables.
         columns:
-          - name: result_id
+          - name: resultid
             description: Unique identifier for the race result
             tests:
             - unique
             - not_null   
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: driver_id
+          - name: driverid
             description: Unique identifier for the driver
-          - name: constructor_id
+          - name: constructorid
             description: Unique identifier for the constructor
           - name: number
             description: Car number
@@ -227,9 +227,9 @@ sources:
             description: Starting grid position
           - name: position
             description: Finishing position
-          - name: position_text
+          - name: positiontext
             description: Text representation of finishing position
-          - name: position_order
+          - name: positionorder
             description: Order of finishing position
           - name: points
             description: Points scored in the race
@@ -239,15 +239,15 @@ sources:
             description: Time taken to complete the race
           - name: milliseconds
             description: Time taken to complete the race in milliseconds
-          - name: fastest_lap
+          - name: fastestlap
             description: Lap number of the driver's fastest lap
           - name: rank
             description: Rank of the driver's fastest lap time
-          - name: fastest_lap_time
+          - name: fastestlaptime
             description: Time of the driver's fastest lap
-          - name: fastest_lap_speed
+          - name: fastestlapspeed
             description: Speed of the driver's fastest lap
-          - name: status_id
+          - name: statusid
             description: Unique identifier for the driver's race status
 
       - name: seasons
@@ -261,19 +261,19 @@ sources:
       - name: sprint_results
         description: This table contains sprint race results for drivers and constructors.
         columns:
-          - name: sprint_result_id
+          - name: resultid
             description: Unique identifier for the sprint race result
-          - name: race_id
+          - name: raceid
             description: Unique identifier for the race
-          - name: driver_id
+          - name: driverid
             description: Unique identifier for the driver
-          - name: constructor_id
+          - name: constructorid
             description: Unique identifier for the constructor
           - name: grid
             description: Starting grid position
           - name: position
             description: Finishing position
-          - name: position_order
+          - name: positionorder
             description: Order of finishing position
           - name: points
             description: Points scored in the sprint race
@@ -283,13 +283,13 @@ sources:
             description: Time taken to complete the sprint race
           - name: milliseconds
             description: Time taken to complete the sprint race in milliseconds
-          - name: status_id
+          - name: statusid
             description: Unique identifier for the driver's sprint race status
 
       - name: status
         description: One status per row. The status contextualizes whether the race was finished or what issues arose e.g. collisions, engine, etc. 
         columns:
-          - name: status_id
+          - name: statusid
             tests:
             - unique
             - not_null   
