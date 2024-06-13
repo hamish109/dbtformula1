@@ -1,7 +1,9 @@
 {{ config(
     tags=["race", "laptimes"],
     materialized = "incremental",
-    unique_key = "result_id"
+    unique_key = "result_id",
+    incremental_strategy='delete+insert',
+    on_schema_change='fail'
 ) }}
 
 WITH results AS (
