@@ -71,3 +71,8 @@ snapshots:
     +docs:
       node_colour: "Purple"
     transient: false
+
+seeds:
+  #+transient: false
+  dbtformula1:
+    +schema: raw

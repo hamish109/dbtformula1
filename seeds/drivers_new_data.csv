@@ -1,0 +1,5 @@
+driverId,driverRef,number,code,forename,surname,dob,nationality,url
+806,oscar_gonzalez,\N,\N,Óscar,González,1923-11-10,Uruguayan,http://en.wikipedia.org/wiki/%C3%93scar_Gonz%C3%A1lez_(racing_driver)
+814,resta,40,DIR,Paul,di Resta,1986-04-16,British,http://en.wikipedia.org/wiki/Paul_di_Resta
+859,lawson,40,LAW,Liam,Lawson,2002-02-11,New Zealander,http://en.wikipedia.org/wiki/Liam_Lawson
+860,bearman,38,BEA,Oliver,Bearman,2005-05-08,British,http://en.wikipedia.org/wiki/Oliver_Bearman

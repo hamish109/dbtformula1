@@ -1,0 +1,5 @@
+circuitId,circuitRef,name,location,country,lat,lng,alt,url
+80,vegas,Las Vegas Strip Street Circuit,Las Vegas,United States,36.1147,-115.173,642,https://en.wikipedia.org/wiki/Las_Vegas_Grand_Prix#Circuit
+43,long_beach,Long Beach,California,USA,33.7651,-118.189,12,"http://en.wikipedia.org/wiki/Long_Beach,_California"
+78,losail,Losail International Circuit,Al Daayen,Qatar,25.49,51.4542,12,http://en.wikipedia.org/wiki/Losail_International_Circuit
+79,miami,Miami International Autodrome,Miami,USA,25.9581,-80.2389,0,http://en.wikipedia.org/wiki/Miami_International_Autodrome
