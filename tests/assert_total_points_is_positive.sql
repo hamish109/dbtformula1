@@ -3,6 +3,6 @@
 select
     race_id,
     sum(points) as total_points
-from {{ ref('int_results_convert_speed' )}}
+from {{ ref('int_results_convert_speed' ) }}
 group by 1
 having total_points < 0

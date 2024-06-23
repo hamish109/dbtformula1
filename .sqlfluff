@@ -9,6 +9,7 @@ sql_file_exts = .sql
 # Comma separated list of rules to exclude, or None
 # exclude_rules = L001,L029,L027,L031
 max_line_length = 120
+# ignore = templating
 
 [sqlfluff:indentation]
 indent_unit = space

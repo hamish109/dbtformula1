@@ -33,7 +33,6 @@ dbtformula1:
     local:
       type: duckdb
       path: 'formula1.duckdb'  
-      attach:
-        - path: 'formula1_number2.duckdb'
-          alias: formula1_number2
-  target: "{{ env_var('SNOWFLAKE_ENVIRONMENT') }}"
+  target: local
+  
+  # "{{ env_var('SNOWFLAKE_ENVIRONMENT') }}"
