@@ -1,3 +1,8 @@
 dbt-packages/
 macros/
 target/
+analyses/
+dbt_packages/
+node_modules/
+setup/
+tests/
