@@ -1,7 +1,7 @@
 WITH status AS (
-    SELECT 
-        status_id   AS status_id,
-        status      AS status
+    SELECT
+        status_id,
+        status
     FROM {{ ref('stg_formula1__status') }}
 )
 

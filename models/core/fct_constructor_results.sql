@@ -2,7 +2,7 @@ WITH constructor_results AS (
     SELECT * FROM {{ ref('stg_formula1__constructor_results') }}
 )
 
-SELECT 
+SELECT
     constructor_results_id,
     race_id,
     constructor_id,

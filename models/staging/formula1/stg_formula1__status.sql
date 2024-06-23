@@ -2,13 +2,13 @@ WITH status AS (
 
     SELECT * FROM {{ source('formula1','status') }}
 
-), 
+),
 
 renamed AS (
-    SELECT 
+    SELECT
         statusid AS status_id,
-        status 
+        status
     FROM status
 )
 
-SELECT * FROM renamed 
+SELECT * FROM renamed

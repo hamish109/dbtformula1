@@ -1,0 +1,26 @@
+# https://docs.sqlfluff.com/en/stable/configuration.html#default-configuration
+
+[sqlfluff]
+# Supported dialects https://docs.sqlfluff.com/en/stable/dialects.html
+# Or run 'sqlfluff dialects'
+dialect = snowflake
+templater = dbt
+sql_file_exts = .sql
+# Comma separated list of rules to exclude, or None
+# exclude_rules = L001,L029,L027,L031
+max_line_length = 120
+# ignore = templating
+
+[sqlfluff:indentation]
+indent_unit = space
+tab_space_size = 4
+indented_joins = false
+
+[sqlfluff:templater]
+unwrap_wrapped_queries = True
+
+[sqlfluff:templater:dbt]
+project_dir = ./
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True

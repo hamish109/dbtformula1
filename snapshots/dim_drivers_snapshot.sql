@@ -1,4 +1,3 @@
-
 {% snapshot dim_drivers_snapshot %}
 
 {{
@@ -10,6 +9,6 @@
    )
 }}
 
-SELECT * FROM {{ ref('stg_formula1__drivers') }}
+    SELECT * FROM {{ ref('stg_formula1__drivers') }}
 
 {% endsnapshot %}

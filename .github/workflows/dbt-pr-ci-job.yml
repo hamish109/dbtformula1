@@ -42,5 +42,5 @@ jobs:
           SNOWFLAKE_SCHEMA: ${{ vars.SNOWFLAKE_SCHEMA }} 
           SNOWFLAKE_ENVIRONMENT: ${{ vars.SNOWFLAKE_ENVIRONMENT }}
 
-      #- name: Lint models
-      #  run: "sqlfluff lint models"
+      - name: Lint models
+        run: "sqlfluff lint models"
